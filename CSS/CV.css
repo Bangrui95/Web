@@ -1,6 +1,35 @@
-body {
-    margin: 0;
-    padding: 40px;
-    background: #f2f2f2;
-    font-family: 'Inter', sans-serif;
+.fixed-group {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: clamp(12px, 4vw, 32px);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background: transparent;
+    z-index: 999;
+    box-sizing: border-box;
+  }
+  
+  /* 左侧大Logo */
+  .logo.bangrui .svg-img {
+    width: clamp(200px, 30vw, 600px);
+    height: auto;
+    margin-left: 600px;
+  }
+  
+  /* 右侧图标 + 文字统一包裹控制 */
+  .logo.boxbox .svg-img {
+    width: 40px;
+    height: auto;
+    margin-right: 160px;
+  }
+  
+  /* 文本样式 */
+  .logotext {
+    font-size: 14px;
+    color: black;
+    text-align: right;
+    margin-top: 4px;
   }
