@@ -12,12 +12,12 @@ body{
     justify-content: center;    /* 水平居中 */
     align-items: center;        /* 垂直居中 */
     flex-direction: column;
-    padding: 3vw;
+    
     box-sizing: border-box;
   }
   
   .section-1 {
-    background-color: white;    /* 你已有的第一页 */
+    background-color: yellow;    /* 你已有的第一页 */
   }
 
 .box1{
@@ -110,18 +110,48 @@ body{
 
 
 
+.section-2 {
+    background-color: black;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding:1vh 0 0 0;
+    margin: 0;
 
-  .folder-background {
-    background-color: #3f48ff;
-    position: fixed;            /* 固定在页面后面 */
-    top: 0;
-    left: 0;
-    width: 90vw;
-    height: 90vh;
-    margin: 5vh 5vw; 
-    background-image: url("folder.svg");
-    background-repeat: no-repeat;
-    background-size: contain;     /* 铺满整个窗口，等比例缩放裁切 */
-    background-position: center;
-    z-index: -1;                /* 放在所有内容后面 */
+    background: url('folder01.svg') no-repeat center center;
+    background-size: 100% 100%; 
+    /* 关键：让背景从 padding 内部开始绘制 */
+    background-origin: content-box;
+    background-clip: content-box;
+  
   }
+
+.section-3{
+    background-color: #3f48ff;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding:1vh 0 0 0;
+    margin: 0;
+
+    background: url('folder02.svg') no-repeat center center;
+    background-size: 100% 100%; 
+    /* 关键：让背景从 padding 内部开始绘制 */
+    background-origin: content-box;
+    background-clip: content-box;
+}
+
+.section-4{
+    background-color: red;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding:1vh 0 0 0;
+    margin: 0;
+
+    background: url('folder03.svg') no-repeat center center;
+    background-size: 100% 100%; 
+    /* 关键：让背景从 padding 内部开始绘制 */
+    background-origin: content-box;
+    background-clip: content-box;
+}
