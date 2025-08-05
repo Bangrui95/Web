@@ -1,35 +1,79 @@
 .fixed-group {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: clamp(12px, 4vw, 32px);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    background: transparent;
-    z-index: 999;
-    box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows:  repeat(12, minmax(0, 1fr));
+  column-gap: 24px;
+  max-width: 100%;
+  margin: auto;
+  padding: 0 39px 10px 39px; /* 给底部添加 100px 内边距 */
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.box1{
+  grid-column: 6 / span 7;
+  grid-row: 1 / span 3;
+  
+  display: flex;
+  justify-content: center;   /* 水平居中 */
+  align-items: center;       /* 垂直居中（可选） */
+  max-width: 100%;   /* 不超过容器宽度 */
+  max-height: 100%;  /* 不超过容器高度 */
+  height: auto;      /* 保持纵横比 */
+  width: auto;       /* 保持纵横比 */
+  object-fit: contain;
+
+  .svg-img1 {
+    width: 100%;          /* 横向占满整个grid cell */
+    height: 100%;         /* 自动按比例缩放高度 */
+    display: block;       /* 去掉 img 自带底部空隙 */
   }
   
-  /* 左侧大Logo */
-  .logo.bangrui .svg-img {
-    width: clamp(200px, 30vw, 600px);
-    height: auto;
-    margin-left: 600px;
+}
+
+.box2{
+  grid-column: 10 / span 3;
+  grid-row: 10 / span 1;
+ 
+  display: flex;
+  justify-content: center;   /* 水平居中 */
+  align-items: center;       /* 垂直居中（可选） */
+  max-width: 100%;   /* 不超过容器宽度 */
+  max-height: 100%;  /* 不超过容器高度 */
+  height: auto;      /* 保持纵横比 */
+  width: auto;       /* 保持纵横比 */
+  object-fit: contain;
+
+  .svg-img2 {
+    width: 100%;          /* 横向占满整个grid cell */
+    height: 100%;         /* 自动按比例缩放高度 */
+    display: block;       /* 去掉 img 自带底部空隙 */
   }
-  
-  /* 右侧图标 + 文字统一包裹控制 */
-  .logo.boxbox .svg-img {
-    width: 40px;
-    height: auto;
-    margin-right: 160px;
-  }
-  
-  /* 文本样式 */
-  .logotext {
-    font-size: 14px;
-    color: black;
-    text-align: right;
-    margin-top: 4px;
-  }
+
+}
+
+.boxtext1{
+  grid-column: 11 / span 2;
+  grid-row: 11 / span 1;
+  display: flex;
+  justify-content: flex-end; /* 水平靠右 */
+  align-items: center;       /* 垂直居中（可选） */
+
+
+}
+.boxtext2{
+  grid-column: 11 / span 2;
+  grid-row: 12 / span 1;
+  display: flex;
+  justify-content: flex-end; /* 水平靠右 */
+  align-items: center;       /* 垂直居中（可选） */
+
+
+}
+
+
+
+
