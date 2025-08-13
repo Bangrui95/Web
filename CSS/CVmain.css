@@ -12,7 +12,6 @@ body{
     justify-content: center;    /* 水平居中 */
     align-items: center;        /* 垂直居中 */
     flex-direction: column;
-    
     box-sizing: border-box;
   }
   
@@ -112,18 +111,21 @@ body{
     background-image: url('folder01.svg');
     background-repeat: no-repeat;
     background-position:center bottom;
-    background-size: 100% 99%; 
+    background-size: 101% 99%; 
 
     position: sticky;
     top: 0;
     z-index: 1; /* 在下面 */
 
+    .information{
+        position: absolute;
+        top: 19vh;        /* 距离视口顶部 3% */
+        left: 6vw;       /* 距离视口左边 4% */
+        font-size: clamp(26px, 2.5vh, 3vw);  /* 自适应文字大小 */
+        color: blue;
+        font-size: larger;
+    }
 }
-
-
-
-
-
 
 
 .section-3{
@@ -145,7 +147,7 @@ body{
     background-image: url('folder03.svg');
     background-repeat: no-repeat;
     background-position:center bottom;
-    background-size: 100% 93%; 
+    background-size: 99% 93%; 
 
     position: sticky;
     top: 0;
