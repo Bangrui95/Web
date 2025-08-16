@@ -248,7 +248,7 @@ body{
   }
   
   .finalpage p{ margin: 0.25em 0; }
-  
+     
   /* 如果想让第一行更大一点 */
   .finalpage p:first-child{
     font-size: clamp(28px, 5vw, 64px);
