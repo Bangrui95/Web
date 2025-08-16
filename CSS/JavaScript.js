@@ -44,7 +44,7 @@ gsap.timeline({
     invalidateOnRefresh: true
   }
 }).to(boxtext, {
-  x: 300,
+  y: -300,
   autoAlpha: 0,
   ease: "none"
 });
