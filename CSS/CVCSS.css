@@ -1,4 +1,5 @@
 html { overflow-y: scroll; }
+.section { min-height: 100svh; height: 100svh; }
 
 
 body{
@@ -365,4 +366,77 @@ body{
     font-size: clamp(28px, 5vw, 64px);
     font-weight: 700;
 }
+}
+
+
+@media (max-width: 768px){
+
+    /* 每屏高度：使用小视口单位，避免地址栏影响 */
+    .section{
+      min-height: 100svh;
+      height: 100svh;
+    }
+  
+    /* 顶部大 LOGO：占满宽度、保持比例、居中 */
+    .section-1 .box1{
+        left: 50%;
+        right: auto;             /* 覆盖掉桌面的 right:2vh */
+        transform: translateX(-50%);
+        top: 1.8vh;              /* 手机端自己的上边距，可调 */
+      }
+      .section-1 .box1 img{
+        width: 90vw;            /* 手机端铺满宽 */
+        height: auto;
+      }
+    
+  
+    /* 底部图形 LOGO：居中到底部，大小随 vw */
+    .section-1 .footer-wrap{
+      left: 0;
+      right: 0;
+      bottom: 2.4vh;
+      justify-content: center;     /* 居中 */
+      gap: 4vw;
+      z-index: 6;
+    }
+    .section-1 .box2 img{
+      width: 66vw;                 /* 你可调 18~28vw 看视觉 */
+      height: auto;
+    }
+  
+    /* 隐藏 “Contact me / Personal Web” 两行 */
+    .section-1 .boxtext{
+      display: none;
+    }
+  
+    /* 首屏文案略缩小一点，避免挤压 */
+    .section-1 .information{
+      font-size: clamp(18px, 5.5vw, 28px);
+      padding: 0 5vw;
+      text-align: left;            /* 需要可改成 center */
+    }
+  
+    /* 其他 Section 的卡片：在手机端更紧凑一些 */
+    .section-2 .card01{
+        width: 100%;                 /* 占满宽度 */
+        left: 0; right: 0;
+        height: calc(90svh - (1vw + 100vw * 143 / 788)); /* 跟随上方 LOGO 的高度估算 */
+
+
+    }
+    .section-3 .card02{
+        width: 100%;                 /* 占满宽度 */
+        left: 0; right: 0;
+        height: calc(80svh - (1vw + 100vw * 143 / 788)); /* 跟随上方 LOGO 的高度估算 */
+
+
+    }
+    .section-4 .card03{
+      width: 100%;                 /* 占满宽度 */
+      left: 0; right: 0;
+      height: calc(70svh - (1vw + 100vw * 143 / 788)); /* 跟随上方 LOGO 的高度估算 */
+    }
+    .section-3 .content{ align-items: flex-start; }     /* 右侧标题改为左对齐，手机更好读 */
+    .section-5 .cardfinal{ width: 100vw; }              /* 尾屏右半区在手机上也铺满 */
+    .section-5 .finalpage{ padding: 6vh 6vw; }
 }

@@ -124,3 +124,45 @@ document.addEventListener('DOMContentLoaded', () => {
     el.closest('a[href^="#"]')?.addEventListener('click', e => e.preventDefault());
   });
 });
+
+
+
+function stickBelow(el, target, gapVh = 2){
+  gsap.set([el, target], { x: 0, y: 0 });      // 清零再测量
+  const r1 = el.getBoundingClientRect();
+  const r2 = target.getBoundingClientRect();
+  const gap = window.innerHeight * (gapVh / 100);
+  const from = r1.top;                // el 当前 top
+  const to   = r2.bottom + gap;       // 目标：target 的 bottom 再加一点间距
+  return to - from;                   // 需要移动的 y
+}
+
+// 媒体查询：只在手机端应用“贴在下方”的规则
+const mm = gsap.matchMedia();
+
+// 手机端（<= 768px）
+mm.add("(max-width: 768px)", () => {
+  const box2  = document.querySelector('.box2');  // 图形 LOGO 容器
+  const box1  = document.querySelector('.box1');  // 文字 LOGO 容器
+  const triggerEl = document.querySelector('.section-1');
+
+  // 小图形 LOGO -> 贴到文字 LOGO 正下方（间距 2vh，可调）
+  gsap.timeline({
+    scrollTrigger:{
+      trigger: triggerEl,
+      start: "top top",
+      end:   "+=100%",
+      scrub: true,
+      markers: false,
+      invalidateOnRefresh: true
+    }
+  }).to(box2, {
+    y: (i, el) => stickBelow(el, box1, 0.6),  // ← 想再低一点就把 2 调大
+    ease: "none"
+  });
+});
+
+// 桌面端（可维持你原来的对齐逻辑；需要的话也能保持“居中/对齐”）
+mm.add("(min-width: 769px)", () => {
+  // 如果桌面端已有相应 timeline，就不需要重复写
+});
