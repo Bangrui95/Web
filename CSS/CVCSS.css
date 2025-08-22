@@ -6,6 +6,15 @@ body{
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     height: 100%;
+
+    .logo-link,
+    .svg-img1 {
+        user-select: none;             /* 禁止文字/图像被选中 */
+        -webkit-user-select: none;     /* Safari */
+        -webkit-user-drag: none;       /* Safari 拖拽 */
+        -webkit-tap-highlight-color: transparent; /* 移动端点按时去掉灰色高亮 */
+        cursor: pointer;               /* 鼠标变成小手 */
+      }
 }
 
 .section {
@@ -31,7 +40,7 @@ body{
         margin: 0 0 0 0;
         position: absolute;
         z-index: 3;
-        top: 1vw;
+        top: 2.6vw;
         right: 2vh;
         
     
@@ -61,7 +70,7 @@ body{
         display: flex;
     
         img{
-            width: 22vw;   
+            width: 26vw;   
             height: auto
         }
     }
@@ -82,7 +91,7 @@ body{
     
     .text1 a{
         font-size: 6vh;
-        color: inherit;             /* 继承 h1 的颜色 */
+        color: red;             /* 继承 h1 的颜色 */
         text-decoration: none;  
     }
     .text2{
@@ -241,9 +250,6 @@ body{
 
 }
 
-   
-
-
    .section-4 {
     position: sticky;
     top: 0;
@@ -301,7 +307,6 @@ body{
     }  
 }
 
-
 .section-5 {
     position: sticky;
     top: 0;
@@ -339,7 +344,7 @@ body{
   }
   
   .finalpage{
-    background: #3f48ff;
+    background: black;
     color: #fff;
     min-height: 100vh;           /* 让内容块本身也铺满一屏 */
     display: flex;               /* 居中关键 */
