@@ -47,18 +47,26 @@ function stickBelow(el, target, gapVh = 2){
   return (r2.bottom + gap) - r1.top;
 }
 
-// ---- 绑定 LOGO 点击事件（通用）----
+// ---- 绑定 跳转 点击事件（通用）----
 document.addEventListener('DOMContentLoaded', () => {
-  const logoRightImg = document.querySelector('.svg-img1'); // 右上角 → section5
+
+  document.querySelectorAll('.svg-img2,.personal-web').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = "index.html"; // ✅ 跳转页面
+    });
+  });
+
+  const logoRightImg = document.querySelector('.text1 a'); // 右上角 → section5
   logoRightImg?.addEventListener('click', (e) => {
     e.preventDefault();
     lenis.scrollTo('#section5', {
-      duration: 1.6,
+      duration: 1.2,
       easing: t => (t === 1 ? 1 : 1 - 2 ** (-10 * t))
     });
   });
 
-  const logoLeftImg = document.querySelector('.svg-img2'); // 左下角 → 回到顶部
+  const logoLeftImg = document.querySelector('.svg-img1'); // 左下角 → 回到顶部
   logoLeftImg?.addEventListener('click', (e) => {
     e.preventDefault();
     lenis.scrollTo(0, { 

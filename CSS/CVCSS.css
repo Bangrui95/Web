@@ -31,6 +31,7 @@ body{
     position: sticky;
     top: 0;
     z-index: 10; /* 在上面 */
+    pointer-events: none;
     
     .box1{
         /*background-color: antiquewhite;
@@ -48,6 +49,8 @@ body{
             width: 50vw;   
             height: auto;
             aspect-ratio: 788 / 143;
+            cursor: pointer; 
+            pointer-events: auto;
         }
      
     }
@@ -62,6 +65,7 @@ body{
         align-items: center;   /* 垂直方向居中对齐 */
         justify-content: space-between; /* 两边留空 */
         z-index: 10;
+        pointer-events: none;
       }
     
     .box2{
@@ -71,7 +75,9 @@ body{
     
         img{
             width: 26vw;   
-            height: auto
+            height: auto;
+            cursor: pointer; 
+            pointer-events: auto;
         }
     }
 
@@ -83,6 +89,9 @@ body{
     .boxtext{
          /*background-color:aquamarine;
          border: 2px dashed black; */
+         text-decoration: none;  
+         pointer-events: auto;
+         cursor: pointer;  
          display: flex;
          flex-direction: column;
          justify-content: flex-end;   /* 控制内容在垂直方向靠下排列 */
@@ -92,7 +101,6 @@ body{
     .text1 a{
         font-size: 6vh;
         color: red;             /* 继承 h1 的颜色 */
-        text-decoration: none;  
     }
     .text2{
         font-size:6vh;
@@ -107,6 +115,7 @@ body{
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);  /* 精确居中 */
+        pointer-events: none;
       }
     
     .highlight {
@@ -124,7 +133,7 @@ body{
 .section-2 {
     position: sticky;
     top: 0;
-    z-index: 1; /* 在上面 */
+    z-index: 2; /* 在上面 */
 
     width: 100%;
     height: 100vh; /* 保证是全屏高 */
@@ -189,7 +198,7 @@ body{
 .section-3 {
     position: sticky;
     top: 0;
-    z-index: 1; /* 在上面 */
+    z-index: 3; /* 在上面 */
 
     width: 100%;
     height: 100vh; /* 保证是全屏高 */
@@ -250,10 +259,10 @@ body{
 
 }
 
-   .section-4 {
+.section-4 {
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 4;
 
     width: 100%;          
     min-height: 100vh;
@@ -310,7 +319,7 @@ body{
 .section-5 {
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 5;
     width: 100%;          /* ✅ 改 100% */
     min-height: 100vh;
     margin: 0;
@@ -322,7 +331,7 @@ body{
   .folder-background {
     position: absolute;
     inset: 0;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
   }
   .folder-background img {
@@ -356,15 +365,25 @@ body{
     padding: 4vh 4vw;
     font-size: clamp(20px, 3.2vw, 42px);  /* 放大且自适应 */
     font-weight: 600;
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
   }
   
   .finalpage p{ margin: 0.25em 0; }
-     
-  /* 如果想让第一行更大一点 */
-  .finalpage p:first-child{
+  /* 第一行 .finalpage p:first-child*/
+
+  .personal-web{
     font-size: clamp(28px, 5vw, 64px);
     font-weight: 700;
-}
+    color: blue;
+    cursor: pointer; 
+  }
+     
+
+  
+    
+
 }
 
 
